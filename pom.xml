@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>moa-id</artifactId>
+    <groupId>MOA.id</groupId>
+    <version>1.5.2</version>
+  </parent>
+  <groupId>MOA.id</groupId>
+  <artifactId>stork-saml-engine</artifactId>
+  <version>1.5.2</version>
+  <name>STORK SAML Engine</name>
+  <description>SAML2 related stuff for STORK</description>
+  
+  <build>
+
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<configuration>
+<source>1.5</source>
+<target>1.5</target>
+</configuration>
+</plugin>
+</plugins>
+</build>
+ 
+  <dependencies>
+  		<dependency>
+    	  <groupId>org.opensaml</groupId>
+	      <artifactId>opensaml</artifactId>
+	      <version>2.5.3</version>
+	      <exclusions>
+	        <exclusion>
+	          <groupId>org.slf4j</groupId>
+	          <artifactId>jcl-over-slf4j</artifactId>	          
+	        </exclusion>
+	        <exclusion>
+	          <groupId>org.slf4j</groupId>
+	          <artifactId>jul-to-slf4j</artifactId>	          
+	        </exclusion>
+	        <exclusion>
+	          <groupId>org.slf4j</groupId>
+	          <artifactId>log4j-over-slf4j</artifactId>	          
+	        </exclusion>
+      	  </exclusions>
+    	</dependency>
+    	<dependency>
+    	  <groupId>org.opensaml</groupId>
+	      <artifactId>xmltooling</artifactId>
+	      <version>1.3.4</version>
+	      <exclusions>
+	        <exclusion>
+	          <groupId>org.slf4j</groupId>
+	          <artifactId>jcl-over-slf4j</artifactId>	          
+	        </exclusion>
+	        <exclusion>
+	          <groupId>org.slf4j</groupId>
+	          <artifactId>jul-to-slf4j</artifactId>	          
+	        </exclusion>
+	        <exclusion>
+	          <groupId>org.slf4j</groupId>
+	          <artifactId>log4j-over-slf4j</artifactId>	          
+	        </exclusion>
+      	  </exclusions>
+    	</dependency>
+    	<dependency>
+    	  <groupId>org.opensaml</groupId>
+	      <artifactId>openws</artifactId>
+	      <version>1.4.4</version>
+	      <exclusions>
+	        <exclusion>
+	          <groupId>org.slf4j</groupId>
+	          <artifactId>jcl-over-slf4j</artifactId>	          
+	        </exclusion>
+	        <exclusion>
+	          <groupId>org.slf4j</groupId>
+	          <artifactId>jul-to-slf4j</artifactId>	          
+	        </exclusion>
+	        <exclusion>
+	          <groupId>org.slf4j</groupId>
+	          <artifactId>log4j-over-slf4j</artifactId>	          
+	        </exclusion>
+      	  </exclusions>
+    	</dependency>
+    	<dependency>
+    	  <groupId>org.slf4j</groupId>
+	      <artifactId>slf4j-log4j12</artifactId>
+	      <version>1.6.4</version>
+	      <scope>runtime</scope>
+    	</dependency>     	     
+	</dependencies>
+</project>
