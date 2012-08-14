@@ -38,6 +38,7 @@ import org.opensaml.saml2.core.Assertion;
 import org.opensaml.saml2.core.Attribute;
 import org.opensaml.saml2.core.AttributeStatement;
 import org.opensaml.saml2.metadata.RequestedAttribute;
+import org.opensaml.security.SAMLSignatureProfileValidator;
 import org.opensaml.ws.message.encoder.MessageEncodingException;
 import org.opensaml.xml.XMLObject;
 import org.opensaml.xml.io.Marshaller;
@@ -399,6 +400,16 @@ public class SAMLUtil {
 		
 		
 		return reqAttrList;
+	}
+	
+	/**
+	 * Validates the signature references using OpenSAML
+	 * @param signableObject Signable SAML Object
+	 * @throws ValidationException thrown if references are not correct 
+	 */
+	public static void validateSignatureReferences(SignableSAMLObject signableObject) throws ValidationException {
+		SAMLSignatureProfileValidator sigValidator = new SAMLSignatureProfileValidator();
+		sigValidator.validate(signableObject.getSignature());
 	}
 	
 	
